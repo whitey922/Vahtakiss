@@ -1,0 +1,14 @@
+.container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.order h2 {
+    display: inline-block;
+    margin: 10px 15px 0;
+}
+
+.order input {
+    margin-right: 15px;
+}
