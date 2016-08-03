@@ -14,6 +14,7 @@
     <script>
         function toLocal(coffee, id) {
             alert(coffee + " is added!!, id: " + id);
+            //smth
            localStorage.clear();
             localStorage.setItem('id' + id + 'title', document.getElementById(coffee + "_title").innerHTML);
             localStorage.setItem('id' + id + 'sugar', document.getElementById(coffee + "_sugar").value);
