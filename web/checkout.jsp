@@ -29,20 +29,28 @@
 
 </body>
 <script>
-    /*Get list objects from localstorage and put in into form to send it to server*/
+    /*Get list objects from localstorage and put it into form to send it to server*/
     $("#orderList tbody").append(
             "<tr>" + "" +
-            "<td>" + "<input type='hidden' name='count' value="+localStorage.length+">"+"</td>" +
+            "<td>" + "<input type='hidden' name='count' value=" + localStorage.length + ">" + "</td>" +
             "</tr>");
+//    function Remove(key) {
+//        localStorage.removeItem(key);
+//    }
+
+    var count = 0;
     for (var i in localStorage) {
         var ord = JSON.parse(localStorage[i]);
+        count++;
         $("#orderList tbody").append(
                 "<tr>" + "" +
-                "<td>" + "<input type='hidden' name='name' value="+ord.coffee+">" +ord.coffee+ "</td>" +
-                "<td>" + "<input type='hidden' name='sugar' value="+ord.sugar+">" +ord.sugar+ "</td>" +
-                "<td>" + "<input type='hidden' name='milk' value="+ord.milk+">" +ord.milk+ "</td>" +
+//                "<td>" + "<span onclick='Remove(i)' '>"+"Remove"+"</span>"+"</td>" +
+                "<td>" + "<input type='hidden' name=" + "name" + count + " value=" + ord.coffee + ">" + ord.coffee + "</td>" +
+                "<td>" + "<input type='number' min='0' max='2' name=" + "sugar" + count + " value=" + ord.sugar + ">" + "</td>" +
+                "<td>" + "<input type='number' min='0' max='2'  name=" + "milk" + count + " value=" + ord.milk + ">" + "</td>" +
                 "</tr>");
     }
+
 
 </script>
 </html>

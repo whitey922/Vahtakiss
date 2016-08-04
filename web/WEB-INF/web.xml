@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>mainServlet</servlet-name>
-        <servlet-class>Servlete.VkAuth</servlet-class>
+        <servlet-class>Servlets.VkAuth</servlet-class>
     </servlet>
 
     <servlet-mapping>

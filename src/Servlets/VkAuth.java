@@ -1,9 +1,8 @@
-package Servlete;
+package Servlets;
 
 /**
  * Created by Yegorov on 03.08.2016.
  */
-import sun.net.www.http.HttpClient;
 
 import java.io.*;
 import javax.servlet.*;
