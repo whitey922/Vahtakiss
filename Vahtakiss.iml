@@ -19,5 +19,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="gson-2.2.2.jar" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.7" level="project" />
+    <orderEntry type="library" name="servletapi:servletapi:2.4" level="project" />
+    <orderEntry type="library" name="javax.servlet:servlet-api:3.0-alpha-1" level="project" />
   </component>
 </module>

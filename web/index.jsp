@@ -15,7 +15,6 @@
         function toLocal(coffee, id) {
             alert(coffee + " is added!!, id: " + id);
 //            localStorage.clear();
-            //checkout new branch
             localStorage.setItem('id' + id + 'title', document.getElementById(coffee + "_title").innerHTML);
             localStorage.setItem('id' + id + 'sugar', document.getElementById(coffee + "_sugar").value);
             localStorage.setItem('id' + id + 'milk', document.getElementById(coffee + "_milk").value);
