@@ -16,7 +16,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <form action="" method="get">
+        <form action="CatchOrder" method="POST">
             <table id="orderList">
                 <tbody>
 
@@ -41,14 +41,14 @@
     var count = 0;
     for (var i in localStorage) {
         var ord = JSON.parse(localStorage[i]);
-        count++;
         $("#orderList tbody").append(
                 "<tr>" + "" +
 //                "<td>" + "<span onclick='Remove(i)' '>"+"Remove"+"</span>"+"</td>" +
-                "<td>" + "<input type='hidden' name=" + "name" + count + " value=" + ord.coffee + ">" + ord.coffee + "</td>" +
+                "<td>" + "<input type='hidden' name=" + "coffee" + count + " value=" + ord.coffee + ">" + ord.coffee     + "</td>" +
                 "<td>" + "<input type='number' min='0' max='2' name=" + "sugar" + count + " value=" + ord.sugar + ">" + "</td>" +
                 "<td>" + "<input type='number' min='0' max='2'  name=" + "milk" + count + " value=" + ord.milk + ">" + "</td>" +
                 "</tr>");
+        count++;
     }
 
 
