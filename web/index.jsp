@@ -6,8 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.vahtakiss.jsp.*" %>
 <%@ page import="static java.awt.SystemColor.text" %>
+<%@ page import="java.io.File" %>
+<%@ page import="com.vahtakiss.servlets.ServletOrderIntercept" %>
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css"/>
@@ -47,6 +48,8 @@
         <% } %>
 
         <a href="checkout.jsp">GO TO BAG</a>
+
+
 
         <%!
             String getString(String coffeeType, String sufix) {

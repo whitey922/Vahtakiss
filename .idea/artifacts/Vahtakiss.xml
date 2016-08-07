@@ -2,12 +2,15 @@
   <artifact type="exploded-war" name="Vahtakiss">
     <output-path>$PROJECT_DIR$/out/artifacts/Vahtakiss</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="Vahtakiss/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Vahtakiss" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.mail:mail:1.4" />
+        </element>
       </element>
+      <element id="javaee-facet-resources" facet="Vahtakiss/web/Web" />
     </root>
   </artifact>
 </component>

@@ -1,4 +1,4 @@
-package Servlets;
+package com.vahtakiss.servlets;
 
 /**
  * Created by Yegorov on 03.08.2016.
