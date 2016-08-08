@@ -17,7 +17,9 @@ public class BeverageFactory {
         int count = Integer.parseInt(req.getParameter("count"));
 
         for (int i = 0; i < count; i++) {
-            createBeverage(req, i);
+            Beverage beverage = createBeverage(req, i);
+            if (beverage != null)
+                beverages.add(beverage);
         }
 
         return beverages;
@@ -34,12 +36,12 @@ public class BeverageFactory {
         if (beverage == null)
             return null;
 
-
         for (int i = 0; i < supplements.length; i++) {
-            boolean exist =
-                    Boolean.parseBoolean(req.getParameter(supplements[i].toString().toLowerCase() + current));
+            boolean exist = false;
+            if (req.getParameter(supplements[i].toString().toLowerCase() + current) != null)
+                exist = req.getParameter(supplements[i].toString().toLowerCase() + current).equals("on");
             if (exist)
-                addSupplements(beverage, supplements[i]);
+                beverage = addSupplements(beverage, supplements[i]);
         }
 
         return beverage;

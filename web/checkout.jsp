@@ -18,13 +18,13 @@
     <div class = "row">
 
         <h1>bigdick</h1>
-        <form action = "Test" method = "post">
+        <form action = "Test" method = "POST">
             <table id = "orderList">
                 <tbody>
 
                 </tbody>
             </table>
-            <input type = "submit" value = "Send">
+            <input type = "submit" value = "Send" onclick="clearLocalStorage()">
             <input type = "button" value = "Remove" onclick = "clearLocalStorage()">
         </form>
     </div>
@@ -44,30 +44,38 @@
                 "<tr>" + "" +
                 "<td>" + "<input type='hidden' name=" + "coffee" + count + " value=" + ord.coffee + " id=" + "coffee" + count + ">" + ord.coffee + "</td>" +
                 "<td>" + "<input type='number' min='0' max='2' name=" + "sugar" + count + " value=" + ord.sugar + " id=" + "sugar" + count + ">" + "</td>" +
-                "<td>" + "<input type='checkbox' name=" + "milk" + count + " checked=" + Boolean(ord.milk) ? Html.Raw("checked=\"checked\"").ToHtmlString()  : "false" + ">" + "</td>" +
-                "<td>" + "<input type='checkbox' name=" + "nuts" + count + " checked=" + Boolean(ord.nuts) ? Html.Raw("checked=\"checked\"").ToHtmlString()  : "" + ">" + "</td>" +
-                "<td>" + "<input type='checkbox' name=" + "syrup" + count + " checked=" + Boolean(ord.syrup) ? Html.Raw("checked=\"checked\"").ToHtmlString()  : "" + ">" + "</td>" +
-                "<td>" + "<input type='checkbox' name=" + "zephyr" + count + " checked=" + Boolean(ord.zephyr) ? Html.Raw("checked=\"checked\"").ToHtmlString()  : "" + ">" + "</td>" +
+                "<td>" + "Milk: " + "<input id=" + "milk" + count + " type='checkbox' name=" + "milk" + count + ">" + "</td>" +
+                "<td>" + "Nuts: " + "<input id=" + "nuts" + count + " type='checkbox' name=" + "nuts" + count + ">" + "</td>" +
+                "<td>" + "Syrup: " + "<input id=" + "syrup" + count + " type='checkbox' name=" + "syrup" + count + ">" + "</td>" +
+                "<td>" + "Zephyr: " + "<input id=" + "zephyr" + count + " type='checkbox' name=" + "zephyr" + count + ">" + "</td>" +
                 "</tr>");
-/*        if (ord.milk == true) {
-            document.getElementById("milk" + count).checked = true;
-        }
-        if (ord.nuts == true) {
-            document.getElementById("nuts" + count).checked = true;
-        }
-        if (ord.syrup == true) {
-            document.getElementById("syrup" + count).checked = true;
-        }
-        if (ord.zephyr == true) {
-            document.getElementById("zephyr" + count).checked = true;
-        }  */
         count++;
     }
 
     function clearLocalStorage() {
         localStorage.clear();
     }
+</script>
 
+<script>
+    var count = 0;
+    for (var i in localStorage) {
+        var ord = JSON.parse(localStorage[i]);
+
+        if (ord.milk)
+            $("#milk" + count).prop('checked', true);
+
+        if (ord.nuts)
+            $("#nuts" + count).prop('checked', true);
+
+        if (ord.syrup)
+            $("#syrup" + count).prop('checked', true);
+
+        if (ord.zephyr)
+            $("#zephyr" + count).prop('checked', true);
+
+        count++;
+    }
 
 </script>
 </html>

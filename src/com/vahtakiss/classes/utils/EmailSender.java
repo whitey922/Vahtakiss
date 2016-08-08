@@ -1,17 +1,17 @@
-package com.vahtakiss.servlets;
+package com.vahtakiss.classes.utils;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-public class EmailSender {
+class EmailSender {
 
     private static final String SENDERS_EMAIL = "vahtakiss.order@gmail.com";
     private static final String SENDERS_PWD = "vapenation13";
     private static final String RECIPIENTS_EMAIL = "basketwall.info@mail.ru";
 
-    public static void sendEmail() {
+    static void sendEmail(String messageText, String messageSubj) {
 
         Properties mailProps = new Properties();
 
@@ -42,17 +42,13 @@ public class EmailSender {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(RECIPIENTS_EMAIL));
 
             // Set the subject of the email
-            message.setSubject("Hello!");
+            message.setSubject(messageSubj);
 
             // Now set the actual message body of the email
-            message.setText("This email was sent using JavaMail API through Gmail! Isn't it awesome?");
-
-            System.out.println("Sending email...");
-
+            message.setText(messageText);
+            
             // Send message
             Transport.send(message);
-
-            System.out.println("Email sent!");
 
         } catch (Exception e) {
             System.err.println("Problem sending email. Exception : " + e.getMessage());
