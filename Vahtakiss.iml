@@ -23,6 +23,6 @@
     <orderEntry type="library" name="gson-2.2.2.jar" level="project" />
     <orderEntry type="library" name="javax.servlet:servlet-api:3.0-alpha-1" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="javax.mail:mail:1.4" level="project" />
+    <orderEntry type="library" name="com.sun.mail:javax.mail:1.5.3" level="project" />
   </component>
 </module>
