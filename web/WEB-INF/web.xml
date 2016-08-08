@@ -5,12 +5,13 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>mainServlet</servlet-name>
-        <servlet-class>Servlets.VkAuth</servlet-class>
+        <servlet-name>SendEmail</servlet-name>
+        <servlet-class>Servlets.SendEmail</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>mainServlet</servlet-name>
-        <url-pattern>/VkAuth</url-pattern>
+        <servlet-name>SendEmail</servlet-name>
+        <url-pattern>/SendEmail</url-pattern>
     </servlet-mapping>
+
 </web-app>

@@ -7,45 +7,51 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.vahtakiss.jsp.*" %>
+<%@ page import="static java.awt.SystemColor.text" %>
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css"/>
     <title>VahtaKiss</title>
     <script>
-        function toLocal(coffee, id) {
-            alert(coffee + " is added!!, id: " + id);
-            //smth
-           localStorage.clear();
-            localStorage.setItem('id' + id + 'title', document.getElementById(coffee + "_title").innerHTML);
-            localStorage.setItem('id' + id + 'sugar', document.getElementById(coffee + "_sugar").value);
-            localStorage.setItem('id' + id + 'milk', document.getElementById(coffee + "_milk").value);
+        function toLocal(coffee) {
+            var orderObject = {
+                'coffee': document.getElementById(coffee + "_title").innerHTML,
+                'sugar': document.getElementById(coffee + "_sugar").value,
+                'milk': document.getElementById(coffee + "_milk").value
+            };
+            localStorage.setItem(Math.floor(Math.random() * (1000000 - 0) + 0), JSON.stringify(orderObject));
 
-            console.log( localStorage.getItem('title'));
-            console.log( localStorage.getItem('sugar'));
-            console.log( localStorage.getItem('milk'));
         }
     </script>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <%
-            int index = 0;
-            String[] coffee = {"Late", "Espresso", "Mocachino", "Coffee"};
-            for (int i = 0; i < coffee.length; i++) {
-                out.print("<form class=\'order\'>");
+        <%! String[] coffee = {"Late", "Espresso", "Mocachino", "Coffee"}; %>
+        <% for (int i = 0; i < coffee.length; i++) { %>
 
-                out.print("<h2 id=\'" + coffee[i] + "_title\'>" + coffee[i] + "</h2>");
+        <form class="order">
+            <h2 id="<%=getString(coffee[i], "title")%>">
+                <%= coffee[i] %>
+            </h2>
 
-                out.print("<label for=\'sugar\'>Sugar: </label>");
-                out.print("<input id=\'" + coffee[i] + "_sugar\' name=\'sugar\' type=\'number\' min=\'0\' max=\'3\' value=\'1\'/>");
+            <label for="sugar"> Sugar: </label>
+            <input id="<%=getString(coffee[i], "sugar")%>" name="sugar" type="number" min="0" max="3" value="1"/>
 
-                out.print("<label for=\'milk\'>Milk: </label>");
-                out.print("<input id=\'" + coffee[i] + "_milk\' name=\'milk\' type=\'number\' min=\'0\' max=\'2\' value=\'1\'>");
+            <label for="milk">Milk: </label>
+            <input id="<%=getString(coffee[i], "milk")%>" name="milk" type="number" min="0" max="2" value="1">
 
-                out.print("<input type=\'submit\' value=\'Order\' onclick=\"toLocal('" + coffee[i] + "', '" + ++index + "')\"/>");
+            <input type="submit" value="Order" onclick="toLocal('<%= coffee[i] %>')"/>
+        </form>
 
-                out.print("</form>");
+        <% } %>
+
+        <a href="checkout.jsp">GO TO BAG</a>
+
+        <%!
+            String getString(String coffeeType, String sufix) {
+                String out = coffeeType + "_" + sufix;
+                return out;
             }
         %>
     </div>
