@@ -4,11 +4,18 @@
     margin: 0 auto;
 }
 
-.order h2 {
-    display: inline-block;
-    margin: 10px 15px 0;
+.order {
+    padding: 15px;
 }
 
-.order input {
-    margin-right: 15px;
+.order h2[id*="title"] {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    width: 200px;
+}
+
+input {
+    width: auto;
+    margin-right: 10px;
 }

@@ -16,13 +16,16 @@
 <body>
 <div class="container">
     <div class="row">
-        <form action="SendEmail" method="POST">
+
+        <h1>bigdick</h1>
+        <form action="Test" method="post">
             <table id="orderList">
                 <tbody>
 
                 </tbody>
             </table>
             <input type="submit" value="Send">
+            <input type="button" value="Remove" onclick="clearLocalStorage()">
         </form>
     </div>
 </div>
@@ -34,23 +37,44 @@
             "<tr>" + "" +
             "<td>" + "<input type='hidden' name='count' value=" + localStorage.length + ">" + "</td>" +
             "</tr>");
-//    function Remove(key) {
-//        localStorage.removeItem(key);
-//    }
-
     var count = 0;
     for (var i in localStorage) {
         var ord = JSON.parse(localStorage[i]);
         $("#orderList tbody").append(
                 "<tr>" + "" +
-//                "<td>" + "<span onclick='Remove(i)' '>"+"Remove"+"</span>"+"</td>" +
-                "<td>" + "<input type='hidden' name=" + "coffee" + count + " value=" + ord.coffee + ">" + ord.coffee     + "</td>" +
-                "<td>" + "<input type='number' min='0' max='2' name=" + "sugar" + count + " value=" + ord.sugar + ">" + "</td>" +
-                "<td>" + "<input type='number' min='0' max='2'  name=" + "milk" + count + " value=" + ord.milk + ">" + "</td>" +
+                "<td>" + "<input type='hidden' name=" + "coffee" + count + " value=" + ord.coffee + " id=" + "coffee" + count + ">" + ord.coffee + "</td>" +
+                "<td>" + "<input type='number' min='0' max='2' name=" + "sugar" + count + " value=" + ord.sugar + " id=" + "sugar" + count + ">" + "</td>" +
+                "<td>" + "<input id=" + "milk" + count + " type='checkbox' name=" + "milk" + count + ">" + "</td>" +
+                "<td>" + "<input id=" + "nuts" + count + " type='checkbox' name=" + "nuts" + count + ">" + "</td>" +
+                "<td>" + "<input id=" + "syrop" + count + " type='checkbox' name=" + "syrop" + count + ">" + "</td>" +
+                "<td>" + "<input id=" + "zephyr" + count + " type='checkbox' name=" + "zephyr" + count + ">" + "</td>" +
                 "</tr>");
         count++;
     }
 
+
+    function clearLocalStorage() {
+        localStorage.clear();
+    }
+</script>
+<script>
+    var count = 0;
+    for (var i in localStorage) {
+        var ord = JSON.parse(localStorage[i]);
+
+        if (ord.milk)
+            $("#milk" + count).prop('checked', true);
+
+        if (ord.nuts)
+            $("#nuts" + count).prop('checked', true);
+
+        if (ord.syrup)
+            $("#syrop" + count).prop('checked', true);
+
+        if (ord.zephyr)
+            $("#zephyr" + count).prop('checked', true);
+        count++;
+    }
 
 </script>
 </html>

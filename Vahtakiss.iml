@@ -22,7 +22,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="gson-2.2.2.jar" level="project" />
     <orderEntry type="library" name="javax.servlet:servlet-api:3.0-alpha-1" level="project" />
-    <orderEntry type="library" name="eu.ocathain.com.sun.mail:javax.mail:1.5.2" level="project" />
-    <orderEntry type="library" name="com.landawn:abacus-util:0.8.11" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="com.sun.mail:javax.mail:1.5.3" level="project" />
   </component>
 </module>

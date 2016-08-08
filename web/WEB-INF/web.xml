@@ -5,13 +5,33 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>SendEmail</servlet-name>
-        <servlet-class>Servlets.SendEmail</servlet-class>
+        <servlet-name>mainServlet</servlet-name>
+        <servlet-class>com.vahtakiss.servlets.VkAuth</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>SendEmail</servlet-name>
-        <url-pattern>/SendEmail</url-pattern>
+        <servlet-name>mainServlet</servlet-name>
+        <url-pattern>/VkAuth</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Test</servlet-name>
+        <servlet-class>com.vahtakiss.servlets.Test</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/Test</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ServletOrderIntercept</servlet-name>
+        <servlet-class>com.vahtakiss.servlets.ServletOrderIntercept</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletOrderIntercept</servlet-name>
+        <url-pattern>/YourOrder</url-pattern>
+    </servlet-mapping>
 </web-app>
