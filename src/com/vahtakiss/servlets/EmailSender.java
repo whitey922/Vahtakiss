@@ -9,7 +9,7 @@ public class EmailSender {
 
     private static final String SENDERS_EMAIL = "vahtakiss.order@gmail.com";
     private static final String SENDERS_PWD = "vapenation13";
-    private static final String RECIPIENTS_EMAIL = "egorov@kml.kh.ua";
+    private static final String RECIPIENTS_EMAIL = "basketwall.info@mail.ru";
 
     public static void sendEmail() {
 
